@@ -34,10 +34,10 @@ function onInputDataStore(evt) {
 function onSubmitFormClean(evt) {
     evt.preventDefault();
 
-    if (refs.input.value === "" || refs.textarea.value === "") {
+    if (refs.input.value === "" || refs.textarea.value === "" || refs.textarea.value.match(/^\s+$/)) {
         return alert("Please fill in all the fields!");
     };
-    
+
     console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)));
     refs.form.reset();
     localStorage.removeItem(STORAGE_KEY);
