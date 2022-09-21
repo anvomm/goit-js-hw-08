@@ -33,6 +33,11 @@ function onInputDataStore(evt) {
 
 function onSubmitFormClean(evt) {
     evt.preventDefault();
+
+    if (refs.input.value === "" || refs.textarea.value === "") {
+        return alert("Please fill in all the fields!");
+    };
+    
     console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)));
     refs.form.reset();
     localStorage.removeItem(STORAGE_KEY);
